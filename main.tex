@@ -1,0 +1,88 @@
+% This is a template developed by Simon T. van Baal - free to use in accordance with CC-BY license.
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
+\usepackage{geometry}
+\geometry{
+  includehead,
+  includefoot,
+  left=1in,
+  right=1in,
+  top=0.8in,
+  bottom=0.8in,
+  headheight=10pt, 
+  headsep=0.25in,
+  footskip=0.3in}
+
+\usepackage{fancyhdr}
+
+% Tables
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage[labelfont=bf, skip = 5pt, font=small]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage{textgreek}
+\usepackage[backend=biber, style=apa]{biblatex}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=false,
+  %  linkcolor=blue,
+  %  filecolor=magenta,      
+  %  urlcolor=cyan,
+  %  pdftitle={Overleaf Example},
+  %  pdfpagemode=FullScreen,
+    }
+    
+\urlstyle{same}
+\frenchspacing % removes double space after each sentence.
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+
+% For generating bogus text:
+\usepackage{lipsum}
+
+\addbibresource{references.bib}
+
+\AtEveryBibitem{\clearfield{note}}
+
+%------------- SI command
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+
+\title{Title}
+\author{S.T. van Baal\thanks{email address: \texttt{insert@email.com}; Corresponding author}, S. Author, T. Author}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent \lipsum[1]
+\end{abstract}
+
+\section{Introduction}
+
+\lipsum[2]
+
+\printbibliography
+
+\beginsupplement
+
+\end{document}
