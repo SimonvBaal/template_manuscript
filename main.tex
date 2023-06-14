@@ -9,6 +9,8 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 
+\frenchspacing % removes double space after each sentence.
+
 \usepackage{geometry}
 \geometry{
   includehead,
@@ -33,6 +35,10 @@
 \usepackage{graphicx}
 \usepackage{authblk}
 \usepackage{textgreek}
+\usepackage[autostyle]{csquotes}
+% Makes sure quotation marks go the right way.
+
+
 \usepackage[backend=biber, style=apa]{biblatex}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
@@ -45,7 +51,7 @@
     }
     
 \urlstyle{same}
-\frenchspacing % removes double space after each sentence.
+
 \usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
 
 
@@ -80,6 +86,8 @@
 \section{Introduction}
 
 \lipsum[2]
+
+"Quotation marks work normally."
 
 \printbibliography
 
