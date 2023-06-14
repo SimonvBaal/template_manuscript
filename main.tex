@@ -3,7 +3,12 @@
 \documentclass[12pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} % Required for inserting images
+
 \usepackage[english]{babel}
+
+% Makes sure quotation marks go the right way.
+\usepackage[autostyle=true]{csquotes}
+\MakeOuterQuote{"}
 
 \usepackage{setspace}
 \onehalfspacing
@@ -36,12 +41,12 @@
 \usepackage{graphicx}
 \usepackage{authblk}
 \usepackage{textgreek}
-\usepackage[autostyle]{csquotes}
-% Makes sure quotation marks go the right way.
+
 
 
 \usepackage[backend=biber, style=apa]{biblatex}
 \usepackage[hidelinks]{hyperref}
+
 \hypersetup{
     colorlinks=false,
   %  linkcolor=blue,
@@ -50,20 +55,21 @@
   %  pdftitle={Overleaf Example},
   %  pdfpagemode=FullScreen,
     }
-    
 \urlstyle{same}
 
 \usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
 
 
-% For generating bogus text:
+% For generating example text:
 \usepackage{lipsum}
 
+% Name the file with references (e.g., from Zotero) "references.bib".
 \addbibresource{references.bib}
 
+% Sometimes Latex likes to print notes, this command tells it not to.
 \AtEveryBibitem{\clearfield{note}}
 
-%------------- SI command
+% SI command to reorder figure numbers and use "S" as a prefix.
 \newcommand{\beginsupplement}{%
         \setcounter{table}{0}
         \renewcommand{\thetable}{S\arabic{table}}%
@@ -88,10 +94,42 @@
 
 \lipsum[2]
 
-"Quotation marks work normally."
+"Quotation marks work normally, see Table \ref{tab:example}."
+
+% Here is a basic table
+
+\begin{table}[h]
+    \centering
+    \caption{Caption}
+    \begin{tabular}{ l | c | r | p{3cm}}
+        \hline			
+        1 & 2 & 3 & "first quote" \\
+        4 & 5 & 6 & second line \\
+        7 & 8 & 9 & third line \\
+        \hline  
+    \end{tabular}
+    \label{tab:example}
+\end{table}
+
+% For more information on how to create tables, visit: https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabularx_package_-_simple_column_stretching.
+
+% Insert figure by deleting \iffalse and \fi. Then refer to a .png or .jpg you upload to the directory.
+\iffalse
+
+\begin{figure}
+    \centering
+    \includegraphics[width=8cm]{}
+    \caption{Caption}
+    \label{fig:example}
+\end{figure}
+
+\fi
 
 \printbibliography
+% to print bibliography
 
 \beginsupplement
+
+% If you insert a figure here, it will be Figure S1.
 
 \end{document}
