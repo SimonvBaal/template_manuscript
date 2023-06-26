@@ -1,0 +1,137 @@
+% This is a template developed by Simon T. van Baal - free to use in accordance with CC-BY license.
+
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage[english]{babel}
+
+% Makes sure quotation marks go the right way.
+\usepackage[autostyle=true]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
+\frenchspacing % removes double space after each sentence.
+
+\usepackage{geometry}
+\geometry{
+  includehead,
+  includefoot,
+  left=1in,
+  right=1in,
+  top=0.8in,
+  bottom=0.8in,
+  headheight=10pt, 
+  headsep=0.25in,
+  footskip=0.3in}
+
+\usepackage{fancyhdr}
+
+% Tables
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage[labelfont=bf, skip = 5pt, font=small]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{authblk}
+
+% Greek symbols in text
+\usepackage{textgreek}
+
+\usepackage[backend=biber, style=apa]{biblatex}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+  %  linkcolor=blue,
+  %  filecolor=magenta,      
+  %  urlcolor=cyan,
+  %  pdftitle={Overleaf Example},
+  %  pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+% For generating example text:
+\usepackage{lipsum}
+
+% Name the file with references (e.g., from Zotero) "references.bib".
+\addbibresource{references.bib}
+
+% Sometimes Latex likes to print notes, this command tells it not to.
+\AtEveryBibitem{\clearfield{note}}
+
+% SI command to reorder figure numbers and use "S" as a prefix.
+\newcommand{\beginsupplement}{%
+        \setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+
+\title{Title}
+\author{F. Author\thanks{email address: \texttt{insert@email.com}; Corresponding author}, S. Author, T. Author}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \noindent \lipsum[1]
+\end{abstract}
+
+\section{Introduction}
+
+\lipsum[2]
+
+Using this template, quotation marks work normally, see Table \ref{tab:example}. You can also use Greek letters such as \texttheta{} outside of math mode. 
+
+Normally, the easiest way to add a bibliography file is to add a document in Overleaf and select Zotero. Otherwise, exporting your local machine library will work too.
+%Cite as \textcite{} for author (year) citations, but you can also easily add it as a parenthetical citation with \autocite{}. 
+
+% Here is a basic table
+
+\begin{table}[ht]
+    \centering
+    \caption{Caption}
+    \begin{tabular}{ l | c | r | p{3cm}}
+        \hline			
+        1 & 2 & 3 & "first quote" \\
+        4 & 5 & 6 & second line \\
+        7 & 8 & 9 & third line \\
+        \hline  
+    \end{tabular}
+    \label{tab:example}
+\end{table}
+
+% For more information on how to create tables, visit: https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabularx_package_-_simple_column_stretching.
+
+% Insert figure by deleting \iffalse and \fi. Then refer to a .png or .jpg you upload to the directory.
+\iffalse
+
+\begin{figure}
+    \centering
+    \includegraphics[width=8cm]{figures/}
+    \caption{Caption}
+    \label{fig:example}
+\end{figure}
+
+\fi
+
+\printbibliography
+% to print bibliography
+
+\beginsupplement
+
+% If you insert a figure here, it will be Figure S1.
+
+\end{document}
